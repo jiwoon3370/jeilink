@@ -1,7 +1,8 @@
 import { Navigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContest";
 
 export default function PrivateRoute({ children }) {
-  const isLoggedIn = false; // TODO: auth 연동
+  const { isLoggedIn } = useAuth();
 
   if (!isLoggedIn) {
     return <Navigate to="/login" replace />;

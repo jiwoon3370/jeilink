@@ -1,13 +1,16 @@
 import { NavLink } from "react-router-dom";
 import "./Header.css";
+import { useAuth } from "../context/AuthContest";
 
 export default function Header() {
+  const { isLoggedIn, logout } = useAuth();
+
   return (
     <header className="header">
       <h2 className="logo">JEILINK</h2>
 
       <nav className="nav">
-        <NavLink to="/" className={({ isActive }) => isActive ? "link active" : "link"}>
+        <NavLink to="/" end className={({ isActive }) => isActive ? "link active" : "link"}>
           Home
         </NavLink>
 
@@ -19,9 +22,15 @@ export default function Header() {
           Mentor
         </NavLink>
 
-        <NavLink to="/login" className={({ isActive }) => isActive ? "link active" : "link"}>
-          Login
-        </NavLink>
+        {isLoggedIn ? (
+          <button className="link" onClick={logout}>
+            Logout
+          </button>
+        ) : (
+          <NavLink to="/login" className={({ isActive }) => isActive ? "link active" : "link"}>
+            Login
+          </NavLink>
+        )}
       </nav>
     </header>
   );
