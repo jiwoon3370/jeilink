@@ -1,0 +1,52 @@
+src/
+├─ assets/        # 이미지, 아이콘, 폰트
+│  ├─ images/
+│  └─ icons/
+│
+├─ components/    # 전역 공용 컴포넌트
+│  ├─ Header.jsx
+│  ├─ Footer.jsx
+│  ├─ Button.jsx
+│  └─ Modal.jsx
+│
+├─ pages/         # 라우팅 단위 페이지
+│  ├─ Home/
+│  │  └─ Home.jsx
+│  ├─ Login/
+│  │  └─ Login.jsx
+│  ├─ Board/
+│  │  └─ Board.jsx
+│  └─ NotFound.jsx
+│
+├─ features/      # ⭐ 핵심 (JEILINK 심장)
+│  ├─ auth/       # 로그인 / 회원
+│  │  ├─ api.js
+│  │  ├─ hooks.js
+│  │  └─ components/
+│  │
+│  ├─ board/      # 자유게시판
+│  │  ├─ api.js
+│  │  ├─ BoardList.jsx
+│  │  └─ BoardItem.jsx
+│  │
+│  ├─ mentor/     # 멘토-멘티
+│  │  └─ ...
+│  │
+│  └─ notice/     # 학교 공지
+│
+├─ hooks/         # 공용 커스텀 훅
+│  └─ useAuth.js
+│
+├─ services/      # API 설정, axios
+│  └─ apiClient.js
+│
+├─ styles/        # 전역 스타일
+│  ├─ global.css
+│  └─ theme.js
+│
+├─ utils/         # 헬퍼 함수
+│  └─ formatDate.js
+│
+├─ App.jsx
+├─ index.js
+└─ routes.jsx     # 라우팅 분리 (선택)
