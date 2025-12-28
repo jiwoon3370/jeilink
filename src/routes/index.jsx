@@ -19,6 +19,7 @@ export default function AppRoutes() {
       <Route path="/dev-login" element={<DevLogin />} />
       <Route path="/board" element={<PrivateRoute><Board /></PrivateRoute>}/>
       <Route path="/board/:id" element={<PrivateRoute><BoardDetail /></PrivateRoute>}/>
+      <Route path="*" element={<NotFound />} />
 
       <Route
         path="/board"

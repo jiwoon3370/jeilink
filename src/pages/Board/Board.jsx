@@ -1,19 +1,20 @@
-import { useEffect, useState } from "react";
-import { getPosts } from "../../features/board/api";
+import PageWrapper from "../../components/layout/PageWrapper";
+import Section from "../../components/layout/Section";
 import BoardList from "../../features/board/components/BoardList";
+import { useBoardList } from "../../features/board/hooks";
 
 const Board = () => {
-  const [posts, setPosts] = useState([]);
+  const { posts, isLoading } = useBoardList();
 
-  useEffect(() => {
-    getPosts().then(setPosts)
-  }, []);
+  if (isLoading) return <div>로딩중...</div>;
 
   return (
-    <div>
-      <h2>게시판</h2>
-      <BoardList posts={posts} />
-    </div>
+    <PageWrapper>
+      <Section maxWidth="1000px">
+        <h2>게시판</h2>
+        <BoardList posts={posts} />
+      </Section>
+    </PageWrapper>
   );
 };
 

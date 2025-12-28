@@ -1,13 +1,28 @@
-import { useParams } from "react-router-dom";
+import PageWrapper from "../../components/layout/PageWrapper";
+import Section from "../../components/layout/Section";
+import BoardDetailHeader from "../../features/board/components/BoardDetailHeader";
+import BoardContent from "../../features/board/components/BoardContent";
+import { mockPost } from "../../features/board/mock/mockPost";
 
 const BoardDetail = () => {
-  const { id } = useParams();
+  const post = mockPost[0];
 
   return (
-    <div>
-      <h2>게시글 상세</h2>
-      <p>게시글 ID: {id}</p>
-    </div>
+    <PageWrapper>
+      <Section maxWidth="900px">
+        <BoardDetailHeader
+          title={post.title}
+          author={post.author}
+          createdAt={post.createdAt}
+          views={post.views}
+        />
+
+        <BoardContent content={post.content} />
+
+        <hr style={{ margin: "40px 0" }} />
+        <div>댓글 영역 (나중에)</div>
+      </Section>
+    </PageWrapper>
   );
 };
 
