@@ -1,22 +1,22 @@
 src/
+├─ api/
+│  ├─ axios.js
+│  └─ postApi.js
+│
 ├─ assets/        # 이미지, 아이콘, 폰트
 │  ├─ images/
 │  └─ icons/
 │
-├─ components/    # 전역 공용 컴포넌트
-│  ├─ Header.jsx
-│  ├─ Footer.jsx
+├─ components/ # 전역 공용 컴포넌트
+│  ├─ BoardList.jsx
 │  ├─ Button.jsx
+│  ├─ Footer.jsx
+│  ├─ Header.css
+│  ├─ Header.jsx
 │  └─ Modal.jsx
 │
-├─ pages/         # 라우팅 단위 페이지
-│  ├─ Home/
-│  │  └─ Home.jsx
-│  ├─ Login/
-│  │  └─ Login.jsx
-│  ├─ Board/
-│  │  └─ Board.jsx
-│  └─ NotFound.jsx
+├─ context/    
+│  └─ AuthContext.jsx
 │
 ├─ features/      # ⭐ 핵심 (JEILINK 심장)
 │  ├─ auth/       # 로그인 / 회원
@@ -26,16 +26,38 @@ src/
 │  │
 │  ├─ board/      # 자유게시판
 │  │  ├─ api.js
-│  │  ├─ BoardList.jsx
-│  │  └─ BoardItem.jsx
+│  │  ├─ BoardItem.jsx
+│  │  └─ BoardList.jsx
 │  │
-│  ├─ mentor/     # 멘토-멘티
+│  ├─ mentor/     # 멘토-멘티 (현재는)
 │  │  └─ ...
 │  │
 │  └─ notice/     # 학교 공지
 │
 ├─ hooks/         # 공용 커스텀 훅
 │  └─ useAuth.js
+│
+├─ pages/    # 페이지별 관리
+│  ├─ Board/
+│  │  ├─ Board.jsx
+│  │  └─ BoardDetail.jsx
+│  │
+│  ├─ DEV/
+│  │  └─ DevLogin.jsx
+│  │
+│  ├─ Home/
+│  │  └─ Home.jsx
+│  │
+│  ├─ Login/
+│  │  └─ Login.jsx
+│  │
+│  ├─ Mentor/
+│  │  └─ Mentor.jsx
+│  └─ NotFound.jsx
+│
+├─ routes/      
+│  ├─ index.jsx
+│  └─ PrivateRoute.jsx
 │
 ├─ services/      # API 설정, axios
 │  └─ apiClient.js
@@ -48,5 +70,4 @@ src/
 │  └─ formatDate.js
 │
 ├─ App.jsx
-├─ index.js
-└─ routes.jsx     # 라우팅 분리 (선택)
+└─ index.js
