@@ -1,73 +1,89 @@
 src/
-├─ api/
-│  ├─ axios.js
-│  └─ postApi.js
+│  App.jsx
+│  index.js
 │
-├─ assets/        # 이미지, 아이콘, 폰트
-│  ├─ images/
-│  └─ icons/
+├─api
+│      axios.js
 │
-├─ components/ # 전역 공용 컴포넌트
-│  ├─ BoardList.jsx
-│  ├─ Button.jsx
-│  ├─ Footer.jsx
-│  ├─ Header.css
-│  ├─ Header.jsx
-│  └─ Modal.jsx
-│
-├─ context/    
-│  └─ AuthContext.jsx
-│
-├─ features/      # ⭐ 핵심 (JEILINK 심장)
-│  ├─ auth/       # 로그인 / 회원
-│  │  ├─ api.js
-│  │  ├─ hooks.js
-│  │  └─ components/
+├─assets
+│  ├─icons
+│  └─images
+├─components
+│  │  Button.jsx
+│  │  Footer.jsx
+│  │  Header.css
+│  │  Header.jsx
+│  │  Modal.jsx
 │  │
-│  ├─ board/      # 자유게시판
-│  │  ├─ api.js
-│  │  ├─ BoardItem.jsx
-│  │  └─ BoardList.jsx
+│  ├─common
+│  │      ContentSection.css
+│  │      ContentSection.jsx
 │  │
-│  ├─ mentor/     # 멘토-멘티 (현재는)
-│  │  └─ ...
+│  └─layout
+│          PageWrapper.jsx
+│          Section.jsx
+│
+├─context
+│      AuthContext.jsx
+│
+├─features
+│  ├─auth
+│  │  │  api.js
+│  │  │  hooks.js
+│  │  │
+│  │  └─components
+│  │          LoginForm.jsx
 │  │
-│  └─ notice/     # 학교 공지
-│
-├─ hooks/         # 공용 커스텀 훅
-│  └─ useAuth.js
-│
-├─ pages/    # 페이지별 관리
-│  ├─ Board/
-│  │  ├─ Board.jsx
-│  │  └─ BoardDetail.jsx
+│  ├─board
+│  │  │  api.js
+│  │  │  hooks.js
+│  │  │
+│  │  ├─components
+│  │  │      BoardContent.jsx
+│  │  │      BoardDetailHeader.jsx
+│  │  │      BoardDetailView.jsx
+│  │  │      BoardItem.jsx
+│  │  │      BoardList.jsx
+│  │  │      ImageBlock.jsx
+│  │  │      TextBlock.jsx
+│  │  │
+│  │  └─mock
+│  │          mockPost.js
 │  │
-│  ├─ DEV/
-│  │  └─ DevLogin.jsx
+│  ├─mentor
+│  └─notice
+├─hooks
+│      useAuth.js
+│
+├─pages
+│  │  NotFound.jsx
 │  │
-│  ├─ Home/
-│  │  └─ Home.jsx
+│  ├─Board
+│  │      Board.jsx
+│  │      BoardDetail.jsx
 │  │
-│  ├─ Login/
-│  │  └─ Login.jsx
+│  ├─DEV
+│  │      DevLogin.jsx
 │  │
-│  ├─ Mentor/
-│  │  └─ Mentor.jsx
-│  └─ NotFound.jsx
+│  ├─Home
+│  │      Home.jsx
+│  │
+│  ├─Login
+│  │      Login.jsx
+│  │
+│  └─Mentor
+│          Mentor.jsx
 │
-├─ routes/      
-│  ├─ index.jsx
-│  └─ PrivateRoute.jsx
+├─routes
+│      index.jsx
+│      PrivateRoute.jsx
 │
-├─ services/      # API 설정, axios
-│  └─ apiClient.js
+├─services
+│      apiClient.js
 │
-├─ styles/        # 전역 스타일
-│  ├─ global.css
-│  └─ theme.js
+├─styles
+│      global.css
+│      theme.js
 │
-├─ utils/         # 헬퍼 함수
-│  └─ formatDate.js
-│
-├─ App.jsx
-└─ index.js
+└─utils
+        formatDate.js
